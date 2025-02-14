@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Auth Callback</title>
+</head>
+<body>
+    <h1>Spotify Authentication Callback</h1>
+    <script>
+        // 解析 URL 获取授权码
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+
+        if (code) {
+            document.body.innerHTML += `<p>Authorization Code: ${code}</p>`;
+            // 你可以在这里发送 code 到后端服务器交换 Access Token
+        } else {
+            document.body.innerHTML += `<p>No Authorization Code Found</p>`;
+        }
+    </script>
+</body>
+</html>
