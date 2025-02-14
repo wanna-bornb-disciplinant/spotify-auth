@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Page</title>
+</head>
+<body>
+    <h1>Spotify OAuth Callback</h1>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+
+        if (code) {
+            document.body.innerHTML += `<p>Authorization Code: ${code}</p>`;
+        } else {
+            document.body.innerHTML += `<p>No Authorization Code Found</p>`;
+        }
+    </script>
+</body>
+</html>
